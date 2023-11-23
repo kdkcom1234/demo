@@ -1,5 +1,6 @@
 package com.example.demo
 
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.web.bind.annotation.GetMapping
@@ -16,8 +17,11 @@ fun main(args: Array<String>) {
 @RestController
 @RequestMapping("/hello")
 class HelloController {
+	@Value("\${app.message}")
+	private val message: String? = null
+
 	@GetMapping
 	fun hello() : String {
-		return "Hello, Jenkins"
+		return "Hello, Jenkins $message"
 	}
 }
