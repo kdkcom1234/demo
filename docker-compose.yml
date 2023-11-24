@@ -8,7 +8,7 @@ services:
     networks:
       - my-network
   app:
-    image: "demo" # 여기에 Spring Boot 도커 이미지 이름을 사용하세요.
+    image: "kdkcom1234/demo" # 여기에 Spring Boot 도커 이미지 이름을 사용하세요.
     ports:
       - "9090:9090" # 호스트의 포트를 컨테이너의 포트에 매핑합니다.
     networks:
